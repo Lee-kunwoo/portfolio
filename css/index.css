@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+/*공통*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+html {
+  scroll-behavior: smooth;
+}
+html, body {
+  font: 12pt/160% 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.75pt;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
+
+/*상단 내비게이션*/
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  padding: 30pt 20pt 20pt 20pt;
+  font-weight: 700;
+  background: none;
+  top: 0;
+}
+
+nav.act {
+  position: sticky;
+  width: 100vw;
+  background: rgba(238, 238, 238, 0.8);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#navlogo {
+  max-width: 1490px;
+  margin: auto;
+  display: flex;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  bottom: 50px;
+}
+
+#navlogo img {
+  width: 50px;
+  height: 50px;
+}
+
+#navlogo p {
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 5px;
+  flex: 1;
+  text-shadow: 0 1px 10px rgb(235, 98, 7);
+}
+
+#menu a {
+  color: white;
+  margin-left: 20pt;
+  text-shadow: 0 1px 10px rgb(48, 77, 135);
+}
+
+#menu a:hover {
+  color: rgb(238, 120, 10);
+}
+
+/* 모바일에서 pc 상단 네브 가리기 */
+#appnav {
+  display: none;
+}
+#appmenu {
+  display: none;
+}
+
+/* Responsive CSS */
+/* 화면 폭이 1024px 이하일 때 */
+@media (max-width: 1024px) {
+  nav {
+    padding: 15pt 15pt 15pt 20pt;
+  }
+  #navlogo {
+    display: flex;
+    flex-direction: row; 
+    
+  }
+  #navlogo img {
+    width: 50px;
+    height: 50px;
+  }
+  #navlogo p {
+    font-size: 1rem;
+   margin-left: auto;
+   
+  }
+  #menu a {
+    margin-left: 15pt;
+    font-size: 0.9rem;
+  }
+}
+
+/* 화면 폭이 768px 이하일 때 */
+@media (max-width: 768px) {    
+  nav {
+    display: flex;
+    flex-direction: row;
+    padding: 5pt;
+    background-color: rgb(235, 98, 7);
+  }
+  #navlogo {
+   margin-left: 5%;
+  }
+  #navlogo img {
+    display: block;
+    flex-direction: row;
+    width: 50px;
+    height: 50px;
+  }
+  #navlogo p {
+    display: block;
+    flex-direction: row;
+    font-size: 0.9rem;
+   
+  }
+  #menu a {display: none;
+   
+}
+}

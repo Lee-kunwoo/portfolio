@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+/*공통*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+html {
+  scroll-behavior: smooth;
+}
+html, body {
+  font: 12pt/160% 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.75pt;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
+
+#top {
+  background: #d0d5e1;
+}
+
+video {
+  width: 100%;
+}
+
+#scroll {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.op img {
+  position: relative;
+  width: 280px;
+  margin: auto;
+  margin-top: 10vh;
+  filter: drop-shadow(5px 5px 5px #000);
+}
+
+.op2 {
+  animation: op2 3s infinite;
+}
+@keyframes op2 {
+  50% {
+    opacity: 0;
+  }
+}
+
+#typing {
+  color: white;
+  text-align: center;
+  line-height: 160%;
+  font-size: 2.5rem;
+  text-shadow: 0 1px 10px rgb(48, 77, 135);
+  height: 150px;
+}
+
+#click {
+  display: block;
+  max-width: 100px;
+  margin: auto;
+  text-align: center;
+  transform: translateY(35vh);
+}
+#click i {
+  font-size: 2.5rem;
+  color: white;
+  display: block;
+  animation: upDown 1s infinite;
+  text-shadow: 0 1px 1px black;
+}
+@keyframes upDown {
+  from {
+    transform: translateY(-10pt);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#click a {
+  color: white;
+  text-shadow: 0 1px 1px #666;
+}
+
+/* Responsive CSS */
+/* 화면 폭이 1024px 이하일 때 */
+@media (max-width: 1024px) {
+  html, body {
+    font-size: 11pt; /* 기본 글자 크기 축소 */
+  }
+  .op img {
+    width: 200px;  /* 이미지 크기 축소 */
+    margin-top: 12vh;
+  }
+  #typing {
+    font-size: 2rem; /* 타이핑 영역 폰트 크기 축소 */
+  }
+  #click {
+    max-width: 80px;
+    transform: translateY(20vh);
+  }
+  #click i {
+    font-size: 2rem;
+  }
+}
+
+/* 화면 폭이 768px 이하일 때 */
+@media (max-width: 768px) {
+  html, body {
+    font-size: 10pt;
+  }
+  .op img {
+    width: 50px;
+	height: auto;
+    margin-top: 10vh;
+  }
+  #typing {
+    font-size: 1.3rem;
+    line-height: 1.5;
+	text-align: center;
+	transform: translateY(10vh);
+  }
+  #click {
+    max-width: 60px;
+	   
+  }
+  #click i {
+	position: relative;
+    font-size: 1.8rem;
+	top: 0;
+	transform: translateY(-10%);
+  }
+}
